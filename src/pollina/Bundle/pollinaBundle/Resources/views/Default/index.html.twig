@@ -1,0 +1,40 @@
+{% extends "::base.html.twig" %}
+
+{% block switchArticle %}
+<div id="btnSwitchArticle">
+    <div id="btnSwitchTop" class="btnSwitchArticle"></div>
+    <div id="btnSwitchBottom" class="btnSwitchArticle"></div>
+</div>
+{% endblock %}
+{% block articles %}
+    <section id="allArticles">
+        <article id="art0" class="article disable firstArticle articleLeft"></article>
+        {% set counter = 1 %}
+        {%  for article in articles %}
+
+            <article id="art{{ counter }}" class="article disable
+
+                {% if counter%2 %}
+                    articleRight
+                {% else %}
+                    articleLeft
+                {% endif %}
+                ">
+                <div class="articleText">
+                    <p>
+                        {{ article.intro}}
+                    </p>
+                    <img src="/pollina/web/inc/img/articleMiddle.png" class="imgArticleMiddle" alt="illustration de l'article">
+                    <br>
+                    <p class="t2ArticleContent">
+                        {{ article.content}}
+                    </p>
+                    <img src="/pollina/web/inc/img/articleFooter.png" class="imgArticleFooter" alt="illustration de fin d'article">
+
+                </div>
+            </article>
+            {% set counter = counter + 1 %}
+        {% endfor %}
+        <article id="art{{ counter }}" class="article disable articleLeft"></article>
+    </section>
+{% endblock %}

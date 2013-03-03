@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <title>Pollina Imprimerie</title>
+    <script type="text/javascript" src="/pollina/web/inc/js/jquery.js"></script>
+    <script type="text/javascript" src="/pollina/web/inc/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" media="all" href="/pollina/web/inc/css/bootstrap.css" />
+    <link rel="stylesheet" media="all" href="/pollina/web/inc/css/pollina.css" />
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Administration Pollina Imprimerie</a>
+            <ul class="nav">
+                <li><a href="../FR/home">Home</a></li>
+                <li><a href="article">Article</a></li>
+                <li><a href="aside">Aside</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="adminContent">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

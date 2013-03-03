@@ -1,0 +1,297 @@
+<?php
+
+
+namespace pollina\Bundle\pollinaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Article")
+ */
+class Article
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $idArt;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $idDet;
+
+    /**
+     * @ORM\Column(type="string", length=1000)
+     * @Assert\MaxLength(limit=1000)
+     * @Assert\NotBlank()
+     */
+    protected $introFr;
+
+    /**
+     * @ORM\Column(type="string", length=1000)
+     * @Assert\MaxLength(limit=1000)
+     * @Assert\NotBlank()
+     */
+    protected $introEn;
+
+    /**
+     * @ORM\Column(type="string", length=1000)
+     * @Assert\MaxLength(limit=1000)
+     * @Assert\NotBlank()
+     */
+    protected $introGe;
+
+    /**
+     * @ORM\Column(type="string", length=2500)
+     * @Assert\MaxLength(limit=2500)
+     * @Assert\NotBlank()
+     */
+    protected $contentFr;
+
+    /**
+     * @ORM\Column(type="string", length=2500)
+     * @Assert\MaxLength(limit=2500)
+     * @Assert\NotBlank()
+     */
+    protected $contentEn;
+
+    /**
+     * @ORM\Column(type="string", length=2500)
+     * @Assert\MaxLength(limit=2500)
+     * @Assert\NotBlank()
+     */
+    protected $contentGe;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    protected $imgMiddle;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    protected $imgFooter;
+
+    /**
+     * Get idArt
+     *
+     * @return integer 
+     */
+    public function getIdArt()
+    {
+        return $this->idArt;
+    }
+
+    /**
+     * Set introFr
+     *
+     * @param string $introFr
+     * @return Article
+     */
+    public function setIntroFr($introFr)
+    {
+        $this->introFr = $introFr;
+    
+        return $this;
+    }
+
+    /**
+     * Get introFr
+     *
+     * @return string 
+     */
+    public function getIntroFr()
+    {
+        return $this->introFr;
+    }
+
+    /**
+     * Set introEn
+     *
+     * @param string $introEn
+     * @return Article
+     */
+    public function setIntroEn($introEn)
+    {
+        $this->introEn = $introEn;
+    
+        return $this;
+    }
+
+    /**
+     * Get introEn
+     *
+     * @return string 
+     */
+    public function getIntroEn()
+    {
+        return $this->introEn;
+    }
+
+    /**
+     * Set introGe
+     *
+     * @param string $introGe
+     * @return Article
+     */
+    public function setIntroGe($introGe)
+    {
+        $this->introGe = $introGe;
+    
+        return $this;
+    }
+
+    /**
+     * Get introGe
+     *
+     * @return string 
+     */
+    public function getIntroGe()
+    {
+        return $this->introGe;
+    }
+
+    /**
+     * Set contentFr
+     *
+     * @param string $contentFr
+     * @return Article
+     */
+    public function setContentFr($contentFr)
+    {
+        $this->contentFr = $contentFr;
+    
+        return $this;
+    }
+
+    /**
+     * Get contentFr
+     *
+     * @return string 
+     */
+    public function getContentFr()
+    {
+        return $this->contentFr;
+    }
+
+    /**
+     * Set contentEn
+     *
+     * @param string $contentEn
+     * @return Article
+     */
+    public function setContentEn($contentEn)
+    {
+        $this->contentEn = $contentEn;
+    
+        return $this;
+    }
+
+    /**
+     * Get contentEn
+     *
+     * @return string 
+     */
+    public function getContentEn()
+    {
+        return $this->contentEn;
+    }
+
+    /**
+     * Set contentGe
+     *
+     * @param string $contentGe
+     * @return Article
+     */
+    public function setContentGe($contentGe)
+    {
+        $this->contentGe = $contentGe;
+    
+        return $this;
+    }
+
+    /**
+     * Get contentGe
+     *
+     * @return string 
+     */
+    public function getContentGe()
+    {
+        return $this->contentGe;
+    }
+
+    /**
+     * Set imgMiddle
+     *
+     * @param string $imgMiddle
+     * @return Article
+     */
+    public function setImgMiddle($imgMiddle)
+    {
+        $this->imgMiddle = $imgMiddle;
+    
+        return $this;
+    }
+
+    /**
+     * Get imgMiddle
+     *
+     * @return string 
+     */
+    public function getImgMiddle()
+    {
+        return $this->imgMiddle;
+    }
+
+    /**
+     * Set imgFooter
+     *
+     * @param string $imgFooter
+     * @return Article
+     */
+    public function setImgFooter($imgFooter)
+    {
+        $this->imgFooter = $imgFooter;
+    
+        return $this;
+    }
+
+    /**
+     * Get imgFooter
+     *
+     * @return string 
+     */
+    public function getImgFooter()
+    {
+        return $this->imgFooter;
+    }
+
+    /**
+     * Set idDet
+     *
+     * @param integer $idDet
+     * @return Article
+     */
+    public function setIdDet($idDet)
+    {
+        $this->idDet = $idDet;
+    
+        return $this;
+    }
+
+    /**
+     * Get idDet
+     *
+     * @return integer 
+     */
+    public function getIdDet()
+    {
+        return $this->idDet;
+    }
+}

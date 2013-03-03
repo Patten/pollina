@@ -1,0 +1,47 @@
+{% extends "::base.html.twig" %}
+{% block articles %}
+
+    <section id="allArticles">
+        <article class=" article disable firstArticle articleLeft"></article>
+        <article class=" article articleRight">
+            <div class="articleText">
+                <h2>Contactez nous !</h2>
+                <div id="carte" style="height:300px; position:absolute; width:300px"></div>
+            </div>
+
+        </article>
+        <article class=" article disable articleLeft"></article>
+
+    </section>
+
+    <script type="text/javascript">
+        function initialiser() {
+            var latlng = new google.maps.LatLng(46.4644626, -1.2194723999999724);
+
+            var options = {
+                center: latlng,
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var carte = new google.maps.Map(document.getElementById("carte"), options);
+
+            /****************Nouveau code****************/
+
+            //création du marqueur
+            var marqueur = new google.maps.Marker({
+                position: new google.maps.LatLng(46.4644626, -1.2194723999999724),
+                map: carte
+            });
+
+            /********************************************/
+        }
+        $(document).ready(function() {
+            initialiser();
+        });
+    </script>
+
+{% endblock %}
+
+
+

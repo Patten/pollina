@@ -1,0 +1,10 @@
+{% extends "::baseAdmin.html.twig" %}
+
+{% block content %}
+<form action="{{ path('aside') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <div class="validateContent">
+        <input class="validateAdmin center btn btn-success" type="submit" />
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "::baseAdmin.html.twig" %}
+
+{% block content %}
+    <div class="adminContent">
+        <form action="{{ path('article') }}" method="post" {{ form_enctype(form) }}>
+
+            <ul class="nav nav-tabs" id="myTab">
+                <li class="active"><a href="#french">Français</a></li>
+                <li><a href="#english">Anglais</a></li>
+                <li><a href="#german">Allemand</a></li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="french">
+                    {{ form_label(form.introFr, 'En tête', {'label_attr': {'class': 'foo'}}) }}
+                    {{ form_widget(form.introFr, { 'attr': {'class': 'foo'} }) }}
+                    {{ form_label(form.contentFr, 'Corps', {'label_attr': {'class': 'foo'}}) }}
+                    {{ form_widget(form.contentFr, { 'attr': {'class': 'foo'} }) }}
+                </div>
+
+                <div class="tab-pane" id="english">
+                    {{ form_label(form.introEn, 'En tête', {'label_attr': {'class': 'foo'}}) }}
+                    {{ form_widget(form.introEn, { 'attr': {'class': 'foo'} }) }}
+                    {{ form_label(form.contentEn, 'Corps', {'label_attr': {'class': 'foo'}}) }}
+                    {{ form_widget(form.contentEn, { 'attr': {'class': 'foo'} }) }}
+                </div>
+
+                <div class="tab-pane" id="german">
+                    {{ form_label(form.introGe, 'En tête', {'label_attr': {'class': 'foo'}}) }}
+                    {{ form_widget(form.introGe, { 'attr': {'class': 'foo'} }) }}
+                    {{ form_label(form.contentGe, 'Corps', {'label_attr': {'class': 'foo'}}) }}
+                    {{ form_widget(form.contentGe, { 'attr': {'class': 'foo'} }) }}
+                </div>
+            </div>
+            <input class="btn btn-success validateAdmin" type="submit" />
+        </form>
+    </div>
+
+
+
+
+    <script>
+
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+    </script>
+
+
+{% endblock %}

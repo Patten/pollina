@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block switchArticle %}
+    <div id="btnSwitchArticle">
+        <div id="btnSwitchTop" class="btnSwitchArticle"></div>
+        <div id="btnSwitchBottom" class="btnSwitchArticle"></div>
+    </div>
+{% endblock %}
+{% block articles %}
+    <section id="allArticles">
+
+        <article id="art0" class="article disable firstArticle articleLeft"></article>
+
+        {% set counter = 1 %}
+        {% for article in articles %}
+
+            <article id="art{{ counter }}" class="article disable
+                {% if counter == 0 %}
+                    firstArticle
+                {% endif %}
+                {% if counter%2 %}
+                    articleRight
+                {% else %}
+                    articleLeft
+                {% endif %}
+                ">
+                <div class="articleText">
+                    {{ article.intro }}
+                </div>
+            </article>
+            {% set counter = counter + 1 %}
+        {% endfor %}
+        <article id="art{{ counter }}" class="article disable articleLeft"></article>
+    </section>
+{% endblock %}

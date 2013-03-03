@@ -1,0 +1,66 @@
+<?php
+
+
+namespace pollina\Bundle\pollinaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Aside")
+ */
+class Aside
+{
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $idAsi;
+
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @Assert\MaxLength(limit=100)
+     * @Assert\NotBlank()
+     */
+    protected $t1Fr;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @Assert\MaxLength(limit=100)
+     * @Assert\NotBlank()
+     */
+    protected $t1En;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @Assert\MaxLength(limit=100)
+     * @Assert\NotBlank()
+     */
+    protected $t1Ge;
+
+    /**
+     * @ORM\Column(type="string", length=140)
+     * @Assert\MaxLength(limit=140)
+     * @Assert\NotBlank()
+     */
+    protected $t2Fr;
+
+    /**
+     * @ORM\Column(type="string", length=140)
+     * @Assert\MaxLength(limit=140)
+     * @Assert\NotBlank()
+     */
+    protected $t2En;
+
+    /**
+     * @ORM\Column(type="string", length=140)
+     * @Assert\MaxLength(limit=140)
+     * @Assert\NotBlank()
+     */
+    protected $t2Ge;
+}
